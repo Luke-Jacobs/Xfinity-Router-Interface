@@ -14,24 +14,9 @@
         <entry file="file://$PROJECT_DIR$/XfinityRouter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#381#788#0" />
-                <element signature="e#839#5144#0" />
-                <element signature="e#1535#1711#0" />
-                <element signature="e#1742#2192#0" />
-                <element signature="e#1849#1918#0" />
-                <element signature="e#2120#2192#0" />
-                <element signature="e#2239#2624#0" />
-                <element signature="e#2681#3215#0" />
-                <element signature="e#2809#2930#0" />
-                <element signature="e#3122#3215#0" />
-                <element signature="e#3311#4042#0" />
-                <element signature="e#3413#3769#0" />
-                <element signature="e#3957#4042#0" />
-                <element signature="e#4187#5144#0" />
-                <element signature="e#5606#5805#0" />
               </folding>
             </state>
           </provider>
@@ -56,7 +41,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Xfinity-Router-HTTP-Interface" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -82,7 +67,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -161,7 +146,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.16442953" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -208,6 +192,25 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Xfinity-Router-HTTP-Interface" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,24 +295,9 @@
     <entry file="file://$PROJECT_DIR$/XfinityRouter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#381#788#0" />
-            <element signature="e#839#5144#0" />
-            <element signature="e#1535#1711#0" />
-            <element signature="e#1742#2192#0" />
-            <element signature="e#1849#1918#0" />
-            <element signature="e#2120#2192#0" />
-            <element signature="e#2239#2624#0" />
-            <element signature="e#2681#3215#0" />
-            <element signature="e#2809#2930#0" />
-            <element signature="e#3122#3215#0" />
-            <element signature="e#3311#4042#0" />
-            <element signature="e#3413#3769#0" />
-            <element signature="e#3957#4042#0" />
-            <element signature="e#4187#5144#0" />
-            <element signature="e#5606#5805#0" />
           </folding>
         </state>
       </provider>
