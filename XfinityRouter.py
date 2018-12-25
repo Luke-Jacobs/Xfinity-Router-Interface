@@ -20,7 +20,7 @@ Potential Uses
 
 
 def grabChunk(buffer: str, startStr: str, endStr: str):
-    """Returns None or a chunk of text in buffer after startStr and before endStr."""
+    """Returns None or a chunk of text in `buffer` after `startStr` and before `endStr`."""
     if buffer.find(startStr) == -1:
         return None
     if buffer.find(endStr) == -1:
@@ -41,6 +41,7 @@ class Router:
     portForwardingPath = "/port_forwarding.asp"
     loginForm = "/goform/home_loggedout"
     connectedDevicesPage = "/connected_devices_computers.asp"
+    atAGlancePage = "/at_a_glance.asp"
 
     def __init__(self, ip="10.0.0.1", pwd="password", port=80):
         """Setup information for interacting with router through HTTP."""
@@ -49,31 +50,36 @@ class Router:
         self.port = port
         self.session = requests.Session()
 
-    def login(self):
+    def login(self) -> bool:
         """Login to the router."""
 
+        # Send the POST data
         self.session.get("http://%s/" % self.ip)  # Get cookies
         load = {"loginUsername": "admin",
                 "loginPassword": self.pwd}
         path = "http://%s%s" % (self.ip, self.loginForm)
+        print('Posting to %s...\nHeaders: %s' % (path, self.session.headers))
         response = self.session.post(path, data=load)
-        if response.status_code == 200:
+
+        # Test to see if our response is a good one or a bad one
+        landingPageURL = "http://%s%s" % (self.ip, self.atAGlancePage)
+        if response.url == landingPageURL:
+            print('Log in success!')
             return True
         else:
-            print('Status code: %d' % response.status_code)
+            print('Log in failed! Status code: %d' % response.status_code)
             return False
 
     def getToken(self, path) -> str:
         """For port forwarding functions to grab the CSRF token for POST requests."""
 
-        csrfStart = "csrf_token\" value=\""  # Start of csrf token hidden HTML input field
-        csrfStop = "\""  # Closing quotation mark
-
         page = self.session.get("http://%s%s" % (self.ip, path)).text
-        token = grabChunk(page, csrfStart, csrfStop)  # Extract our token
-        return token
+        page = BeautifulSoup(page, 'html.parser')
 
-    def setPortForwarding(self, toggle: bool):
+        element = page.find('input', attrs={'type': 'hidden', 'name': 'csrf_token'})
+        return element['value']  # Return the value field of the hidden input for CSRF
+
+    def setPortForwarding(self, toggle: bool) -> bool:
         """Sets the router port forwarding to either Enable or Disable.
         Requires the object to be logged in."""
 
@@ -101,28 +107,28 @@ class Router:
         response = self.session.post('http://%s%s' % (self.ip, self.addForwardForm), data=load)
 
         if response.status_code == 200:
-            return True
+            return True  # It worked!
         else:
-            print('Add forward: Status code: %d' % response.status_code)
+            print('Add port forward: Status code: %d' % response.status_code)
             return False
 
     def getConnectedDevices(self) -> list:
         """Return a list of devices currently connected to this router."""
-        # TODO Add code to retrieve connected devices
+
         response = self.session.get('http://%s%s' % (self.ip, self.connectedDevicesPage))
-
         if response.status_code != 200:  # Page failed to load
-            return []
-
+            return []  # Return no devices
 
         # HTML Elements for device data:
-        # <table class="data"
-        # <tbody>
-        # 2nd <tr> and on...
+        # <table class="data" ...>
+        #   <tbody>
+        #     2nd <tr> and on...
 
-        parser = BeautifulSoup(response.content, 'html.parser')
-        parser = parser('table', attrs={'class': 'data'})[0]
-        devices = parser('tr')[1:]  # Tag list of device tr element
+        parser = BeautifulSoup(response.content, 'html.parser')  # For quick and easy HTML parsing
+        parser = parser.find('table', attrs={'class': 'data'})  # Find the online devices data
+        if not parser:
+            raise RuntimeError('Failed to retrieve %s' % self.connectedDevicesPage)
+        devices = parser('tr')[1:]  # Tag list of device table row elements
 
         deviceProperties = []
         for device in devices:
@@ -130,10 +136,10 @@ class Router:
             ipv4 = grabChunk(device.text, "IPV4 Address\n", "\n")
             mac = grabChunk(device.text, "MAC Address\n", "\n")
             deviceProperties.append((name, ipv4, mac))
-        return deviceProperties  # List of (name, ipv4, mac)
+        return deviceProperties  # List of (name, ipv4, mac) - each tuple is 1 device
 
 
 if __name__ == "__main__":
     r = Router(pwd="password")  # "password" is the default for Xfinity routers
     r.login()  # Login to the router via HTTP
-    devices = r.getConnectedDevices()  # Retrieve currently-connected devices
+    r.setPortForwarding(False)

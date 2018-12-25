@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdb6c2fe-0aa4-4b41-9500-b4fa4ef0f8f3" name="Default" comment="" />
+    <list default="true" id="fdb6c2fe-0aa4-4b41-9500-b4fa4ef0f8f3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XfinityRouter - Copy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/XfinityRouter.py" beforeDir="false" afterPath="$PROJECT_DIR$/XfinityRouter.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,10 +18,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/XfinityRouter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="526">
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#47#761#1" />
+                <element signature="e#1750#1926#0" />
+                <element signature="e#1961#2710#0" />
+                <element signature="e#2761#3132#0" />
+                <element signature="e#3193#3727#0" />
+                <element signature="e#3804#4535#0" />
               </folding>
             </state>
           </provider>
@@ -36,8 +46,9 @@
       <find>Error: http</find>
       <find>Session</find>
       <find>ta</find>
-      <find>table</find>
       <find>tr</find>
+      <find>user</find>
+      <find>table</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -62,7 +73,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Xfinity-Router-Interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xfinity-Router-Interface" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -146,8 +167,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.16442953" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16644295" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -163,7 +185,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" weight="0.3295562" />
       <window_info anchor="right" id="Run" order="4" weight="0.63825506" />
-      <window_info anchor="right" id="Debug" order="5" weight="0.4704698" />
+      <window_info anchor="right" id="Debug" order="5" weight="0.36845636" />
       <window_info anchor="right" id="Python Console" order="6" weight="0.39395973" />
     </layout>
   </component>
@@ -292,12 +314,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/XfinityRouter - Copy.py" />
     <entry file="file://$PROJECT_DIR$/XfinityRouter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="526">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#47#761#1" />
+            <element signature="e#1750#1926#0" />
+            <element signature="e#1961#2710#0" />
+            <element signature="e#2761#3132#0" />
+            <element signature="e#3193#3727#0" />
+            <element signature="e#3804#4535#0" />
           </folding>
         </state>
       </provider>
